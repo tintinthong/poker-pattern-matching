@@ -30,3 +30,10 @@ This repo does two things:
 
 
 
+### References
+
+http://senzee.blogspot.com/2007/01/7.html
+http://suffe.cool/poker/evaluator.html
+https://www.codeproject.com/Articles/569271/A-Poker-hand-analyzer-in-JavaScript-using-bit-math
+http://archives1.twoplustwo.com/showflat.php?Cat=0&Number=8513906&amp;amp;amp;page=2&fpart=1&vc=1
+

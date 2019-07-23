@@ -15,6 +15,9 @@ const results = deck.reduce((acc, item) => {
   return acc;
 }, {})
 
+
+
+
 console.log(results)
 console.log(Object.keys(results).length)
 
