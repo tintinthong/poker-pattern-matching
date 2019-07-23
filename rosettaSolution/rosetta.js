@@ -1,5 +1,3 @@
-// From Rosetta Code 
-// https://rosettacode.org/wiki/Poker_hand_analyser#JavaScript
 
 //The format of a hand:
 //   "facesuit, facesuit, facesuit, facesuit"
@@ -13,26 +11,48 @@ function analyzeHand(hand){
     //changing hand string into array
     let cards  = hand.split(' ').filter(x => x !== 'joker');
 
-    //unimportant
+    //counting number of jokers
     let jokers = hand.split(' ').length - cards.length;
-    
+    // console.log(jokers)
+
     //gets the index of the face in array
     let faces = cards.map( card => FACES.indexOf(card.slice(0,-1)) );
+    // console.log("faces is", faces)
 
     //gets the index of the suit in array
     let suits = cards.map( card => SUITS.indexOf(card.slice(-1)) );
     
-
-    if( cards.some( (card, i, self) => i !== self.indexOf(card) ) || faces.some(face => face === -1) || suits.some(suit => suit === -1) ) 
+    //checks if there is at least one duplicate
+    if( cards.some( (card, i, self) => i !== self.indexOf(card)|| faces.some(face => face === -1) || suits.some(suit => suit === -1) ) ) 
     return 'invalid';
-    
+    //removed this in conditional
+
+    //check if flush(logical)
     let flush    = suits.every(suit => suit === suits[0]);
+
+    //count "of a kind" of faces
+    //do not know why sort 
     let groups   = FACES.map( (face,i) => faces.filter(j => i === j).length).sort( (x, y) => y - x );
+    // console.log("groups is ", groups)
+
+    //to handle edge case of a,2,3,4,5
     let shifted  = faces.map(x => (x + 1) % 13);
+    // console.log("shifted is", shifted)
+
+    //to be used when checking straight
     let distance = Math.min( Math.max(...faces) - Math.min(...faces), Math.max(...shifted) - Math.min(...shifted));
+    // console.log("distance is ", distance)
+
+    //to check if it is a straight
     let straight = groups[0] === 1 && distance < 5;
+    // console.log("straight is ", straight)
+
+    //adding number of jokers
+    //why do this? seems wrong
     groups[0] += jokers;
-    
+    // console.log("groups[0] is ", groups[0])
+
+    //print which pattern based on precedence
     if      (groups[0] === 5)                    return 'five-of-a-kind'
     else if (straight && flush)                  return 'straight-flush'
     else if (groups[0] === 4)                    return 'four-of-a-kind'
@@ -65,17 +85,10 @@ let testHands = [
     "joker q♦ joker a♦ 10♦"
 ];
 
-// for(hand of testHands) console.log(hand + ": " + analyzeHand(hand));
 
-// for(hand of testHands) analyzeHand(hand);
-
-
-
-let cards="2♥ 2♦ 2♣ k♣ q♦"; 
-let cardsArray=cards.split(' '); //creates a new variable
-console.log(cardsArray[0].slice(0,-1))
-analyzeHand(cards);
+//testing many hands
+for(hand of testHands) console.log(hand + ": " + analyzeHand(hand));
 
 
-// cards.map( card => FACES.indexOf(card.slice(0,-1)) )
+
 

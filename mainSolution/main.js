@@ -2,9 +2,9 @@
 
 //this require format is called destructuring in node js
 
-const { generateDeck, shuffle, drawHand } = require('./generate.js');
-const {sort} = require('./sort.js')
-const {k_combinations}=require('./findAllHands.js')
+const { generateDeck, shuffle, drawHand } = require('./mainSolution/generate.js/index.js');
+const {sort} = require('./sort.js/index.js')
+const {k_combinations}=require('./mainSolution/findAllHands.js/index.js')
 
 
 //example 

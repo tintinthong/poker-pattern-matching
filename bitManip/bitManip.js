@@ -1,3 +1,5 @@
+
+//Configure Variables
 hands=["4 of a Kind", "Straight Flush", "Straight", "Flush", "High Card",
        "1 Pair", "2 Pair", "Royal Flush", "3 of a Kind", "Full House" ];
 var A=14, K=13, Q=12, J=11, _ = { "♠":1, "♣":2, "♥":4, "♦":8 };
@@ -12,14 +14,15 @@ function rankPokerHand(cs,ss) {
   console.log("Hand: "+hands[v]+((s == 0x403c)?" (Ace low)":""));
 }
 
-//Royal Flush   
+//Examples
 rankPokerHand( [ 10, J, Q, K, A],  [ _["♠"], _["♠"], _["♠"], _["♠"], _["♠"] ] );
+rankPokerHand( [ A, 2, 3, 4, 5],  [ _["♥"], _["♥"], _["♥"], _["♥"], _["♥"] ] );
+rankPokerHand( [ 3, 5, K, 3, 3 ],  [ _["♥"], _["♠"], _["♣"], _["♥"], _["♥"] ] );
 
-
-var A=14, K=13, Q=12, J=11
-_ = { "♠":1, "♣":2, "♥":4, "♦":8 };
-console.log(_)
-
-
+// Reference
 //https://stackoverflow.com/questions/2829883/7-card-poker-hand-evaluator
 //http://jsfiddle.net/subskybox/r4mSF/
+
+// Bitwise Operators
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+
