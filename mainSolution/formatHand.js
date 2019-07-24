@@ -4,7 +4,7 @@
 //key value-pair (to be used for algorithm)
 let _ = { "S":1, "C":2, "H":4, "D":8 };
 
-//format a single hand to be used by algorithhm rankPokerHand
+//format a single hand to be used by algorithhm findBestPokerHand
 //- takes an array and returns an object
 function formatHand(hand){
 
@@ -27,9 +27,13 @@ function formatHand(hand){
 
 //format an array of hands 
 //- takes an array of arrays and leaves an array of objects
-function formatHands(hands){ 
+function formatAllHands(hands){ 
     return hands.map(hand=>formatHand(hand));
 }
+
+
+//exporting modules
+module.exports={formatHand, formatAllHands}
 
 
 //Example below:
@@ -65,5 +69,5 @@ let hands=
 
 // [2,5,6,11,13], [_["S"],_["D"],_["S"],_["C"],_["D"]]
 
-formatHand(hand );
-formatHands( hands);
+formatHand(hand);
+formatAllHands( hands);

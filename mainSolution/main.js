@@ -5,7 +5,8 @@
 const { generateDeck, shuffle, drawHand } = require('./generate.js');
 const {sort} = require('./sort.js')
 const {k_combinations}=require('./findAllHands.js')
-const {formatHand}=require('./formatHand.js')
+const {formatHand,formatAllHands}=require('./formatHand.js')
+const {mapBestPokerHand}=require('./mapBestPokerHand.js')
 
 
 //example 
@@ -15,10 +16,15 @@ let shuffledDeck=shuffle(deck);
 let hand= drawHand(7,shuffledDeck);
 let allPossibleHands=k_combinations(hand,5)
 let allPossibleHandsSorted= allPossibleHands.map((hand)=>{return sort(hand)})
-allPossibleHandsSorted
+let formattedHands= formatAllHands(allPossibleHandsSorted)
+let handScores= mapBestPokerHand(formattedHands);
+console.log(handScores);
 
-//format hand
-// formatHand(allPossibleHandsSorted);s
+
+
+
+
+
 
 
 

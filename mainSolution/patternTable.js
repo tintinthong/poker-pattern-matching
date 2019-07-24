@@ -1,4 +1,4 @@
-let patterns={
+exports.patternTable={
 
     RoyalFlush:10, //5 card
     StraightFlush:9, //5 card
