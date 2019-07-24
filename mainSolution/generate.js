@@ -1,7 +1,7 @@
 //FUNCTION TO GENERATE HAND/ DECK
 
 //import card types
-const {suits, numbers}=require('./mainSolution/cardTypes.js/index.js')
+const {suits, numbers}=require('./cardTypes.js')
 
 //generate 52 cards
 exports.generateDeck = function(){

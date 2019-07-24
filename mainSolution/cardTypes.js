@@ -1,6 +1,6 @@
 //DIFFERENT SUIT AND NUMBER TYPES
 
-let utils= require('./utils.js/index.js')
+let utils= require('./utils.js')
 
 exports.suits= ["D","H","C","S"];
 

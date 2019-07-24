@@ -1,8 +1,10 @@
 
+
 //Configure Variables
-hands=["4 of a Kind", "Straight Flush", "Straight", "Flush", "High Card",
+let hands=["4 of a Kind", "Straight Flush", "Straight", "Flush", "High Card",
        "1 Pair", "2 Pair", "Royal Flush", "3 of a Kind", "Full House" ];
-var A=14, K=13, Q=12, J=11, _ = { "♠":1, "♣":2, "♥":4, "♦":8 };
+let A=14, K=13, Q=12, J=11
+let _ = { "S":1, "C":2, "H":4, "D":8 };
 
 //Calculates the Rank of a 5 card Poker hand using bit manipulations.
 function rankPokerHand(cs,ss) {
@@ -15,9 +17,10 @@ function rankPokerHand(cs,ss) {
 }
 
 //Examples
-rankPokerHand( [ 10, J, Q, K, A],  [ _["♠"], _["♠"], _["♠"], _["♠"], _["♠"] ] );
-rankPokerHand( [ A, 2, 3, 4, 5],  [ _["♥"], _["♥"], _["♥"], _["♥"], _["♥"] ] );
-rankPokerHand( [ 3, 5, K, 3, 3 ],  [ _["♥"], _["♠"], _["♣"], _["♥"], _["♥"] ] );
+rankPokerHand( [ 10, J, Q, K, A],  [ _["S"], _["S"], _["S"], _["S"], _["S"] ] );
+rankPokerHand( [ A, 2, 3, 4, 5],  [ _["H"], _["H"], _["H"], _["H"], _["H"] ] );
+rankPokerHand( [ 2, A, 3, 4, 5],  [ _["H"], _["H"], _["H"], _["H"], _["H"] ] );
+rankPokerHand( [ 3, 5, K, 3, 3 ],  [ _["H"], _["H"], _["H"], _["H"], _["H"] ] );
 
 // Reference
 //https://stackoverflow.com/questions/2829883/7-card-poker-hand-evaluator
