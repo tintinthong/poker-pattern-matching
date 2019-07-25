@@ -3,8 +3,14 @@
 //- does not work finding the best poker hand from 7 cards (although that would be tremendously useful)
 
 //Configure Variables
-let hands=["4 of a Kind", "Straight Flush", "Straight", "Flush", "High Card",
-       "1 Pair", "2 Pair", "Royal Flush", "3 of a Kind", "Full House" ];
+// let hands=["4 of a Kind", "Straight Flush", "Straight", "Flush", "High Card",
+//        "1 Pair", "2 Pair", "Royal Flush", "3 of a Kind", "Full House" ];
+
+
+
+let hands= [
+  "Four", "StraightFlush","Straight", "Flush", "High","Pair","TwoPair","RoyalFlush","Three","FullHouse"
+]
 let A=14, K=13, Q=12, J=11
 let _ = { "S":1, "C":2, "H":4, "D":8 };
 
@@ -15,7 +21,7 @@ function findBestPokerHand(cs,ss) {
   v = v % 15 - ((s/(s&-s) == 31) || (s == 0x403c) ? 3 : 1);
   v -= (ss[0] == (ss[1]|ss[2]|ss[3]|ss[4])) * ((s == 0x7c00) ? -5 : 1);
 
-  return {hand:hands[v]+((s == 0x403c)?" (Ace low)":"")}
+  return hands[v]+((s == 0x403c)?" (Ace low)":"")
   // console.log("Hand: "+hands[v]+((s == 0x403c)?" (Ace low)":""));
 }
 

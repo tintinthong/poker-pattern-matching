@@ -39,3 +39,8 @@ The program should analyze a single hand and produce one of the following output
    4♥ 4♠ k♠ 5♦ 10♠: one-pair
    q♣ 10♣ 7♣ 6♣ 4♣: flush
 ```
+
+
+## EXPLANATION 
+
+

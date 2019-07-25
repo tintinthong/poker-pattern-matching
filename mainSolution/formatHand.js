@@ -19,6 +19,7 @@ function formatHand(hand){
     })
 
     return {
+        hand: hand,
         suits: suits,
         numbers: numbers,
         suitsReady: suitsReady
@@ -69,5 +70,5 @@ let hands=
 
 // [2,5,6,11,13], [_["S"],_["D"],_["S"],_["C"],_["D"]]
 
-formatHand(hand);
-formatAllHands( hands);
+// formatHand(hand);
+// formatAllHands( hands);

@@ -1,5 +1,9 @@
 
+//This is some code I got from someone 
 
+//it may or may not be useful. What it does is that 
+
+// given our pre-formatting.
 
 // D, C, S, H
 
@@ -16,12 +20,11 @@ const results = deck.reduce((acc, item) => {
 }, {})
 
 
-
-
 console.log(results)
-console.log(Object.keys(results).length)
 
-for (let [card, pattern] of Object.entries(results)) {
-  console.log(`Card is ${card}`, pattern)
-  // DO STUFF HERE
-}
+// console.log(Object.keys(results).length)
+
+// for (let [card, pattern] of Object.entries(results)) {
+//   console.log(`Card is ${card}`, pattern)
+//   // DO STUFF HERE
+// }
