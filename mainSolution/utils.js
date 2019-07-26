@@ -11,7 +11,7 @@ exports.seq = function (start,end){
 
 //get array sepcified by index 
 exports.getArrayByIndex = function( array, indexes){
-
+    
     return {
         inArray: array.filter((number,i) => indexes.includes(i)),
         outArray: array.filter((number,i) => !indexes.includes(i))
@@ -21,7 +21,7 @@ exports.getArrayByIndex = function( array, indexes){
 
 //finds index of duplicates 
 exports.findIndexOfDuplicates =function (numbers){
-
+    
     var duplicates ={};
     for (var i = 0; i < numbers.length; i++) {
         if(duplicates.hasOwnProperty(numbers[i])) {
@@ -31,5 +31,14 @@ exports.findIndexOfDuplicates =function (numbers){
         }
     }
     return duplicates;
-
 }
+
+//getting all pairs from an array
+exports.allPairs= function(array) {
+    if (array.length < 2) { return []; }
+    var first = array[0],
+    rest  = array.slice(1),
+    pairs = rest.map(function (x) { return [first, x]; });
+    return pairs.concat(allPairs(rest));
+}
+

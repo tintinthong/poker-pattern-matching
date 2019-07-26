@@ -17,7 +17,7 @@ let shuffledDeck=shuffle(deck);
 let hand=[
     { suit: 'D', number: 9 },
     { suit: 'C', number: 9 },
-    { suit: 'H', number: 9 },
+    { suit: 'H', number: 11 },
     { suit: 'S', number: 11 },
     { suit: 'D', number: 3 },
     { suit: 'H', number: 11 },
@@ -27,6 +27,18 @@ let hand=[
 let allPossibleHands=k_combinations(hand,5)
 console.log("Number of all possible hands= "+ allPossibleHands.length)
 let formattedHands= formatAllHands(allPossibleHands);
-// console.log(formattedHands);
+
+
 mapBestPokerHand(formattedHands);
-// console.log(formattedHands);
+
+
+formattedHands.forEach(hand => {
+    if(hand.pattern=="FullHouse"){
+        console.log(hand);
+    }
+    
+});
+
+
+
+
