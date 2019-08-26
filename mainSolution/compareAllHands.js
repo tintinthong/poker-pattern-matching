@@ -1,25 +1,19 @@
-// COMPARE ALL HANDS
+// COMPARE ALL HANDS (DONE)
 
-const compareHands= require('./compareHands.js');
-const patternTable= require('./patternTable').patternTable
-const {k_combinations}=require('./findAllHands.js')
-const {formatAllHands}=require('./formatHand.js')
-const {mapBestPokerHand}=require('./mapBestPokerHand.js')
+const compareHands = require('./compareHands.js');
 
-function compareAllHands(arrayOfFormattedHands){
+exports.compareAllHands = function (arrayOfFormattedHands) {
     //assume first is the largest 
-    let maxFormattedHand= arrayOfFormattedHands[0]
-    for (var i=1; i<arrayOfFormattedHands.length; i++) {
-        if(compareHands(maxFormattedHand,arrayOfFormattedHands[i])=="tie"){
-            maxFormattedHand=compareHands(maxFormattedHand,arrayOfFormattedHands[i])
+    let maxFormattedHand = arrayOfFormattedHands[0]
+    for (var i = 1; i < arrayOfFormattedHands.length; i++) {
+        if (compareHands(maxFormattedHand, arrayOfFormattedHands[i]) == "tie") {
+            maxFormattedHand = compareHands(maxFormattedHand, arrayOfFormattedHands[i])
         }
-
-
     }
     return maxFormattedHand
 }
 
 
 
-    
+
 

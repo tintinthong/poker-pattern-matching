@@ -1,10 +1,10 @@
 
-// FORMAT OBJECT FORMAT TO BE ATTACKED WITH ALGORITHM
+// FORMAT OBJECT FORMAT TO BE ATTACKED WITH ALGORITHM (DONE)
 
 //key value-pair (to be used for algorithm)
 let _ = { "S":1, "C":2, "H":4, "D":8 };
 
-//format a single hand to be used by algorithhm findBestPokerHand
+//format a single hand to be used by algorithhm findPattern
 //- takes an array and returns an object
 function formatHand(hand){
 
@@ -47,6 +47,8 @@ let hand= [
     { suit: 'D', number: 13 }
   ]
 
+//Example above have to be in this format
+// [2,5,6,11,13], [_["S"],_["D"],_["S"],_["C"],_["D"]]
 
 let hands=
 [
@@ -65,10 +67,6 @@ let hands=
     { suit: 'H', number: 12 }
   ]
 ]
-
-//algorithm requires to be in format 
-
-// [2,5,6,11,13], [_["S"],_["D"],_["S"],_["C"],_["D"]]
 
 // formatHand(hand);
 // formatAllHands( hands);

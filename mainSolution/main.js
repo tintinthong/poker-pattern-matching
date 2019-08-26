@@ -2,9 +2,8 @@
 
 //this require format is called destructuring in node js
 const { generateDeck, shuffle, drawHand } = require('./generate.js');
-const {sort} = require('./sort.js')
 const {k_combinations}=require('./findAllHands.js')
-const {formatHand,formatAllHands}=require('./formatHand.js')
+const {formatAllHands}=require('./formatHand.js')
 const {mapBestPokerHand}=require('./mapBestPokerHand.js')
 const {fullPrint}=require('./fullPrint.js')
 
@@ -27,17 +26,9 @@ let hand=[
 let allPossibleHands=k_combinations(hand,5)
 console.log("Number of all possible hands= "+ allPossibleHands.length)
 let formattedHands= formatAllHands(allPossibleHands);
-
-
 mapBestPokerHand(formattedHands);
 
 
-formattedHands.forEach(hand => {
-    if(hand.pattern=="FullHouse"){
-        console.log(hand);
-    }
-    
-});
 
 
 

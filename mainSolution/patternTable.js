@@ -1,3 +1,6 @@
+// SCORE FOR EACH PATTERN
+//- include low ace
+
 exports.patternTable={
 
     RoyalFlush:10, //5 card

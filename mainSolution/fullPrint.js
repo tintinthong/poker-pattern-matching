@@ -1,4 +1,6 @@
 
+// PRINT FORMATTED HAND OBJECT (DONE)
+
 exports.fullPrint= function(formattedHand){
     console.log("=============")
     console.log(formattedHand.numbers)

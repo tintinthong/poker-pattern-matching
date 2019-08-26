@@ -1,8 +1,4 @@
-// FIND ALL 5 HANDS
-//https://gist.github.com/axelpale/3118596
-
-
-//probably think of a better naming convention
+//Find all k-combinations of a set
 
 /**
  * K-combinations

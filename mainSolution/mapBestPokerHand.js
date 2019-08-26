@@ -1,15 +1,14 @@
 
 //FIND BEST POKER HAND FROM 5 CARDS
 
-//this is a mutable library
-
 //- applies find BestPokerHand()
 //- stores largest card
 //- formattedHands is output of formatAllHands()
 //- get an array of objects and return an array of objects
 
-const {findBestPokerHand}= require('./findBestPokerHand.js')
+const {findPattern}= require('./findPattern.js')
 const {getArrayByIndex, findIndexOfDuplicates}= require('./utils.js')
+const {compareHands}=require('./compareHands.js')
 
 function mapBestPokerHand(formattedHands){
   
@@ -17,7 +16,7 @@ function mapBestPokerHand(formattedHands){
   formattedHands.map((formattedHand)=> {
     
     //adding pattern
-    formattedHand.pattern= findBestPokerHand(formattedHand.numbers, formattedHand.suitsReady)
+    formattedHand.pattern= findPattern(formattedHand.numbers, formattedHand.suitsReady)
     
     //add position for each duplicate 
     //only to be used for full house and double pair
@@ -56,12 +55,24 @@ function mapBestPokerHand(formattedHands){
         }
       }
     }
-    
-    //if two pair just get the largest number from array.inArray
-    
+
+  
     
   })
-  return "Applied algorithm to all poker hands"
+  //--- outside of map
+
+  // using compareHand
+  let bestHand= formattedHands[0]
+
+  for(let i=1;i<formattedHands.length;i++){
+
+    bestHand= compareHands(bestHand,formattedHands[i])
+  }
+  console.log("Applied algorithm to all poker hands")
+  console.log("the best hand is", bestHand)
+  return bestHand
+
+
 }
 
 

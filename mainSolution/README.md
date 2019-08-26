@@ -43,3 +43,15 @@ http://archives1.twoplustwo.com/showflat.php?Cat=0&Number=8513906&amp;amp;amp;pa
 
 Follow this one
 https://stackoverflow.com/questions/42379988/how-do-i-evaluate-texas-hold-em-hands-with-javascript
+
+
+// Reference
+//https://stackoverflow.com/questions/2829883/7-card-poker-hand-evaluator
+//http://jsfiddle.net/subskybox/r4mSF/
+
+// Bitwise Operators
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+
+
+//Find all combinations
+//https://gist.github.com/axelpale/3118596
