@@ -1,10 +1,17 @@
 
 //FIND BEST POKER HAND FROM 5 CARDS
-
 //- applies find BestPokerHand()
 //- stores largest card
 //- formattedHands is output of formatAllHands()
 //- get an array of objects and return an array of objects
+
+//-posList: Positions of duplications { '9': [ 0, 1 ], '11': [ 2, 3, 4 ] }
+//-pos: Position of all duplicates combined
+//-inArray: All values in pattern
+//-outArray: All values outside of pattern 
+//-arrayRefine: All values of duplicates that lead to pattern
+//-twoHigh: Highest Pair
+//-threeHigh: Highest Three
 
 const {findPattern}= require('./findPattern.js')
 const {getArrayByIndex, findIndexOfDuplicates}= require('./utils.js')
@@ -19,9 +26,8 @@ function mapBestPokerHand(formattedHands){
     formattedHand.pattern= findPattern(formattedHand.numbers, formattedHand.suitsReady)
     
     //add position for each duplicate 
-    //only to be used for full house and double pair
+    //- only to be used for full house and double pair
     formattedHand.posList= findIndexOfDuplicates(formattedHand.numbers);
-    
     
     //making position
     formattedHand.pos=[]
@@ -30,7 +36,7 @@ function mapBestPokerHand(formattedHands){
       formattedHand.pos=formattedHand.pos.concat(arrays[index])
     }
     
-    //making array from positionss
+    //making array from positions
     formattedHand.array=getArrayByIndex(formattedHand.numbers,formattedHand.pos)
     
     //making refined array from positions 
@@ -56,12 +62,17 @@ function mapBestPokerHand(formattedHands){
       }
     }
 
-  
-    
+    if(formattedHand.pattern=="TwoPair"){
+      // Do this later 
+    }
+
+
   })
   //--- outside of map
 
   // using compareHand
+  console.log(JSON.stringify(formattedHands,null, "\t"));
+  
   let bestHand= formattedHands[0]
 
   for(let i=1;i<formattedHands.length;i++){
@@ -69,9 +80,7 @@ function mapBestPokerHand(formattedHands){
     bestHand= compareHands(bestHand,formattedHands[i])
   }
   console.log("Applied algorithm to all poker hands")
-  console.log("the best hand is", bestHand)
   return bestHand
-
 
 }
 

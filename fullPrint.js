@@ -1,5 +1,5 @@
 
-// PRINT FORMATTED HAND OBJECT (DONE)
+// PRINT FORMATTED HAND OBJECT (NOT DONE)
 
 exports.fullPrint= function(formattedHand){
     console.log("=============")
