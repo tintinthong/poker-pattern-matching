@@ -74,7 +74,11 @@ Below is the format output of the best poker hand:
 }
 ```
 
-### Installation
+### Installation and Running 
+
+```
+node main.js
+```
 
 Will be made into npm repository soon.
 
