@@ -49,6 +49,18 @@ If you have no pattern:
 Below is the format output of the best poker hand:
 
 ```
+let hand=[
+  { suit: 'D', number: 9 },
+  { suit: 'C', number: 9 },
+  { suit: 'H', number: 11 },
+  { suit: 'S', number: 11 },
+  { suit: 'D', number: 3 },
+  { suit: 'H', number: 11 },
+  { suit: 'D', number: 8 }
+];
+```
+
+```
 {
   hand: [
     { suit: 'D', number: 9 },
