@@ -31,7 +31,7 @@ Will be made into npm repository soon.
 
 ### References
 
-[1](http://senzee.blogspot.com/2007/01/7.html)
+[1](http://senzee.blogspot.com/2007/01/7.html)[Senzee]
 
 [2][Cactus Kev 7-hand Algo](http://suffe.cool/poker/evaluator.html)
 
